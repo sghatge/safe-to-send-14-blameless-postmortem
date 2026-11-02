@@ -1,0 +1,21 @@
+{
+  "title": "Black Friday email sent at 23:30 with English price format (synthetic)",
+  "impact": "about 118,750 of 312,500 synthetic recipients (38%) received a late-night email showing €1,299.00 instead of 1.299,00 €; 41 complaints",
+  "summary": "A Greek Black Friday delivery was scheduled in UTC instead of local time and used an English price template. The operator forgot to check the send time.",
+  "timeline": [
+    {"at": "2026-11-27 21:30", "what": "Delivery starts sending (23:30 local)", "kind": "started"},
+    {"at": "2026-11-27 21:52", "what": "First customer complaint reaches the market team", "kind": "detected"},
+    {"at": "2026-11-27 22:04", "what": "Remaining sends paused; 38% of the audience already reached", "kind": "contained"},
+    {"at": "2026-11-28 09:10", "what": "Apology email approved and sent"}
+  ],
+  "contributing_factors": [
+    "Scheduler field shows UTC with no local-time preview",
+    "Price block copied from an English template; no locale check before send",
+    "Human error under Black Friday volume"
+  ],
+  "actions": [
+    {"action": "Add local-time preview next to the scheduler field", "owner": "platform team", "due": "2026-12-12"},
+    {"action": "Add price-locale and quiet-hours checks to pre-send QA", "owner": "crm ops", "due": "2026-12-05"},
+    {"action": "Review Black Friday staffing", "owner": "", "due": ""}
+  ]
+}
